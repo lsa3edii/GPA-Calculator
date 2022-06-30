@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class GPA extends javax.swing.JFrame {
 
-    int hours2, hours3, fail2, fail3;
+    int hours2, hours3, hoursProject, fail2, fail3, failProject;
     Repository repo = new GPA_Equation();
 
     public GPA() {
@@ -24,6 +24,7 @@ public class GPA extends javax.swing.JFrame {
         buttonGroup4 = new javax.swing.ButtonGroup();
         buttonGroup5 = new javax.swing.ButtonGroup();
         buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroup7 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         exitApp = new javax.swing.JButton();
@@ -75,7 +76,13 @@ public class GPA extends javax.swing.JFrame {
         hour = new javax.swing.JLabel();
         selectAll = new javax.swing.JRadioButton();
         grade1 = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
+        icon1 = new javax.swing.JLabel();
+        graduationProject = new javax.swing.JCheckBox();
+        projectGrade = new javax.swing.JComboBox<>();
+        project_button = new javax.swing.JRadioButton();
+        projectText = new javax.swing.JLabel();
+        projectGPA = new javax.swing.JLabel();
+        icon2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -105,7 +112,7 @@ public class GPA extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(316, 316, 316)
+                .addGap(331, 331, 331)
                 .addComponent(exitApp, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -417,7 +424,37 @@ public class GPA extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-gpa-calculator-64.png"))); // NOI18N
+        icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-gpa-calculator-64.png"))); // NOI18N
+
+        graduationProject.setBackground(new java.awt.Color(255, 255, 255));
+        graduationProject.setFont(new java.awt.Font("Century Schoolbook", 3, 17)); // NOI18N
+        graduationProject.setText("Graduation Project");
+        graduationProject.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                graduationProjectMouseClicked(evt);
+            }
+        });
+
+        projectGrade.setFont(new java.awt.Font("Century Schoolbook", 3, 17)); // NOI18N
+        projectGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grade", "A+", "A", "B+", "B", "C+", "C", "D+", "D", "F" }));
+        projectGrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                projectGradeActionPerformed(evt);
+            }
+        });
+
+        project_button.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup7.add(project_button);
+        project_button.setFont(new java.awt.Font("Century Schoolbook", 3, 17)); // NOI18N
+        project_button.setText("6 Hours");
+
+        projectText.setFont(new java.awt.Font("Century Schoolbook", 3, 17)); // NOI18N
+        projectText.setText("Project GPA → ");
+
+        projectGPA.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        projectGPA.setText("0.0");
+
+        icon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-bachelors-degree-50.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -425,13 +462,109 @@ public class GPA extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(470, 470, 470)
-                .addComponent(calculate)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(icon1)
+                        .addGap(192, 192, 192)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(previousGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(previousCompletedHours, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(271, 271, 271))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(selectAll)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(text1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(subjectGPA1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(subject1)
+                                    .addComponent(grade1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sub1_button1)
+                                    .addComponent(sub1_button2))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(sub2_button1)
+                                            .addComponent(grade2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(sub2_button2)
+                                            .addComponent(subject2)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(text2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(subjectGPA2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(17, 17, 17)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(sub3_button1)
+                                            .addComponent(grade3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(sub3_button2)
+                                            .addComponent(subject3)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(text3)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(subjectGPA3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(17, 17, 17)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(sub4_button1)
+                                            .addComponent(grade4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(sub4_button2)
+                                            .addComponent(subject4)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(text4)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(subjectGPA4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(17, 17, 17)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(sub5_button1)
+                                            .addComponent(grade5, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(sub5_button2)
+                                            .addComponent(subject5)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(text5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(subjectGPA5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(17, 17, 17)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(subject6)
+                                            .addComponent(sub6_button1)
+                                            .addComponent(grade6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(sub6_button2)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(text6)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(subjectGPA6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(126, 126, 126)
+                                        .addComponent(icon2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(project_button)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(projectText)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(projectGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(4, 4, 4))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(graduationProject)
+                                                .addGap(12, 12, 12)
+                                                .addComponent(projectGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(calculate)
+                        .addGap(464, 464, 464))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -441,84 +574,7 @@ public class GPA extends javax.swing.JFrame {
                                 .addGap(4, 4, 4))
                             .addComponent(cumulativeGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(currentTermGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(322, 322, 322))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel2)
-                                .addComponent(previousGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(35, 35, 35)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(previousCompletedHours, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3))
-                            .addGap(271, 271, 271))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(5, 5, 5)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(sub1_button1)
-                                        .addComponent(sub1_button2)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(text1)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(subjectGPA1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addComponent(subject1)
-                                .addComponent(grade1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(selectAll))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(sub2_button1)
-                                .addComponent(grade2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(sub2_button2)
-                                .addComponent(subject2)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(text2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(subjectGPA2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(17, 17, 17)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(sub3_button1)
-                                .addComponent(grade3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(sub3_button2)
-                                .addComponent(subject3)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(text3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(subjectGPA3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(17, 17, 17)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(sub4_button1)
-                                .addComponent(grade4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(sub4_button2)
-                                .addComponent(subject4)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(text4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(subjectGPA4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(17, 17, 17)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(sub5_button1)
-                                .addComponent(grade5, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(sub5_button2)
-                                .addComponent(subject5)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(text5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(subjectGPA5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(17, 17, 17)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(subject6)
-                                .addComponent(sub6_button1)
-                                .addComponent(grade6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(sub6_button2)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(text6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(subjectGPA6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(9, 9, 9)))))
+                        .addGap(336, 336, 336))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -534,8 +590,8 @@ public class GPA extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(previousCompletedHours, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(previousGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel4))
-                .addGap(42, 42, 42)
+                    .addComponent(icon1))
+                .addGap(26, 26, 26)
                 .addComponent(currentTermGPA)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cumulativeGPA)
@@ -543,9 +599,25 @@ public class GPA extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLable7)
                     .addComponent(hour))
-                .addGap(29, 29, 29)
-                .addComponent(selectAll)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(selectAll)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(graduationProject)
+                                    .addComponent(projectGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(projectText)
+                                    .addComponent(projectGPA)
+                                    .addComponent(project_button)))
+                            .addComponent(icon2))
+                        .addGap(26, 26, 26)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(subject1)
                     .addComponent(subject2)
@@ -555,22 +627,21 @@ public class GPA extends javax.swing.JFrame {
                     .addComponent(subject6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(sub1_button1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(sub1_button2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(text1)
-                            .addComponent(subjectGPA1)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(text1)
+                        .addComponent(subjectGPA1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(grade2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(grade1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(sub2_button1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sub2_button1)
+                            .addComponent(sub1_button1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(sub2_button2)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sub2_button2)
+                            .addComponent(sub1_button2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(text2)
@@ -615,7 +686,7 @@ public class GPA extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(text6)
                             .addComponent(subjectGPA6))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(calculate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -643,19 +714,27 @@ public class GPA extends javax.swing.JFrame {
         
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Input for Previous GPA & Previous Completed Hours is Wrong\n"
-                    + "if any Text Field is Empty, Please Enter 0 !", "Error!!", JOptionPane.ERROR_MESSAGE);
+                     + "if any Text Field is Empty, Please Enter 0 !", "Error!!", JOptionPane.ERROR_MESSAGE);
+        
+//            if(previousCompletedHours.getText().isEmpty())
+//                previousCompletedHours.setText("0");
+//        
+//            if(previousGPA.getText().isEmpty())
+//                previousGPA.setText("0");
         }
     }
     
     void setCurrentData() {
         currentTermGPA.setText("Current Term GPA → " + Math.round(repo.calculateTermGPA() * 1000) / 1000.0);
         cumulativeGPA.setText("Cumulative GPA → " + Math.round(repo.calculateCumulativeGPA() * 1000) / 1000.0);
-        hour.setText("" + (Integer.valueOf(previousCompletedHours.getText()) + hours2 + hours3 - (fail2 + fail3)));
+        hour.setText("" + (Integer.valueOf(previousCompletedHours.getText()) + hours2 + hours3 + hoursProject 
+                - (fail2 + fail3 + failProject)) );
     }
     
     void setSelectionButton() {
         sub1_button2.setSelected(true); sub2_button2.setSelected(true); sub3_button2.setSelected(true);
         sub4_button2.setSelected(true); sub5_button2.setSelected(true); sub6_button2.setSelected(true);
+        project_button.setSelected(true);
     }
     
     void setDisableButton() {
@@ -672,6 +751,9 @@ public class GPA extends javax.swing.JFrame {
         subjectGPA4.setEnabled(false); text4.setEnabled(false);
         subjectGPA5.setEnabled(false); text5.setEnabled(false);
         subjectGPA6.setEnabled(false); text6.setEnabled(false);
+        
+        projectGrade.disable(); project_button.setEnabled(false);
+        projectText.setEnabled(false); projectGPA.setEnabled(false);
     }
 
     private void exitAppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitAppMouseClicked
@@ -682,8 +764,15 @@ public class GPA extends javax.swing.JFrame {
     private void calculateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculateMouseClicked
         setPreviousData();
         
+        if(previousCompletedHours.getText().isEmpty())
+            previousCompletedHours.setText("0");
+        
+        if(previousGPA.getText().isEmpty())
+            previousGPA.setText("0");
+        
         if (subject1.isSelected() == false && subject2.isSelected() == false && subject3.isSelected() == false 
-                && subject4.isSelected() == false && subject5.isSelected() == false && subject6.isSelected() == false )
+                && subject4.isSelected() == false && subject5.isSelected() == false && subject6.isSelected() == false
+                && !graduationProject.isSelected())
             JOptionPane.showMessageDialog(null, "Please Complete your Information!!");
         
         else { 
@@ -801,19 +890,34 @@ public class GPA extends javax.swing.JFrame {
                     else if(grade6.getSelectedItem().equals("F"))
                         fail3 = fail3 + 3;
                 }
+                
+                if(graduationProject.isSelected() && !projectGrade.getSelectedItem().equals("Grade")) {
+
+                    if(project_button.isSelected()) {
+                        repo.subject.setProjectGPA_hour6(Double.valueOf(projectGPA.getText()));
+                        hoursProject = 6;
+                    }
+
+                    if(projectGrade.getSelectedItem().equals("F"))
+                        failProject = 6;
+                    
+                }
             }
         }
-
-        repo.data.setTermHours(hours2 + hours3);
+        
+        repo.data.setTermHours(hours2 + hours3 + hoursProject);
         setCurrentData();
         
         hours2 = 0; hours3 = 0; fail2 = 0; fail3 = 0;
+        hoursProject = 0; failProject = 0;
         
         repo.subject.setGPA1_hour2(0); repo.subject.setGPA2_hour2(0); repo.subject.setGPA3_hour2(0);
         repo.subject.setGPA4_hour2(0); repo.subject.setGPA5_hour2(0); repo.subject.setGPA6_hour2(0);
         
         repo.subject.setGPA1_hour3(0); repo.subject.setGPA2_hour3(0); repo.subject.setGPA3_hour3(0);
         repo.subject.setGPA4_hour3(0); repo.subject.setGPA5_hour3(0); repo.subject.setGPA6_hour3(0);
+        
+        repo.subject.setProjectGPA_hour6(0);
     }//GEN-LAST:event_calculateMouseClicked
 
     
@@ -919,6 +1023,20 @@ public class GPA extends javax.swing.JFrame {
             subjectGPA6.setEnabled(false); text6.setEnabled(false); }
     }//GEN-LAST:event_subject6MouseClicked
 
+    private void graduationProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_graduationProjectMouseClicked
+        if(graduationProject.isSelected()) {
+            projectGrade.setEnabled(true); project_button.setEnabled(true);
+            projectText.setEnabled(true); projectGPA.setEnabled(true); }
+        else {
+            projectGrade.setEnabled(false); project_button.setEnabled(false);
+            projectText.setEnabled(false); projectGPA.setEnabled(false); }
+    }//GEN-LAST:event_graduationProjectMouseClicked
+
+    private void projectGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projectGradeActionPerformed
+        repo.gradeType(projectGrade.getSelectedItem().toString());
+        projectGPA.setText("" + repo.subject.getSubjectGPA());
+    }//GEN-LAST:event_projectGradeActionPerformed
+
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -952,6 +1070,7 @@ public class GPA extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
     private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroup7;
     private javax.swing.JButton calculate;
     private javax.swing.JLabel cumulativeGPA;
     private javax.swing.JLabel currentTermGPA;
@@ -962,17 +1081,23 @@ public class GPA extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> grade4;
     private javax.swing.JComboBox<String> grade5;
     private javax.swing.JComboBox<String> grade6;
+    private javax.swing.JCheckBox graduationProject;
     private javax.swing.JLabel hour;
+    private javax.swing.JLabel icon1;
+    private javax.swing.JLabel icon2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLable7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField previousCompletedHours;
     private javax.swing.JTextField previousGPA;
+    private javax.swing.JLabel projectGPA;
+    private javax.swing.JComboBox<String> projectGrade;
+    private javax.swing.JLabel projectText;
+    private javax.swing.JRadioButton project_button;
     private javax.swing.JRadioButton selectAll;
     private javax.swing.JRadioButton sub1_button1;
     private javax.swing.JRadioButton sub1_button2;

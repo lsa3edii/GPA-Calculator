@@ -20,6 +20,8 @@ public class Subject {
     private double gpa6_hour3;
 //  private double gpa7_hour3;
     
+    private double projectGPA_hour6;
+    
     public Subject() {
         //
     }
@@ -130,7 +132,16 @@ public class Subject {
         this.gpa6_hour2 = gpa;
     }
     
-
+////////////////////////////////////////////////
+    
+    public double getProjectGPA_hour6() {
+        return this.projectGPA_hour6;
+    }
+    
+    public void setProjectGPA_hour6(double gpa) {
+        this.projectGPA_hour6 = gpa;
+    }
+    
 //    public double getGPA7_hour2() {
 //        return this.gpa7_hours2;
 //    }
