@@ -2,6 +2,7 @@ package controller;
 
 public class GPA_Equation implements Repository{
     
+    private double currentPoints;
     private double currentPoints1;
     private double currentPoints2;
     private double CurrentTermGPA;
@@ -20,7 +21,8 @@ public class GPA_Equation implements Repository{
         currentPoints2 = 2 * (subject.getGPA1_hour2() +  subject.getGPA2_hour2() + subject.getGPA3_hour2() + subject.getGPA4_hour2() 
                 + subject.getGPA5_hour2() + subject.getGPA6_hour2());
 
-        return currentPoints1 + currentPoints2;        
+        currentPoints = currentPoints1 + currentPoints2 + (6 * subject.getProjectGPA_hour6());
+        return currentPoints;
     }
     
     @Override
