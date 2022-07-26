@@ -709,18 +709,23 @@ public class GPA extends javax.swing.JFrame {
 
     void setPreviousData() {
         try {
-        repo.data.setPreviousGPA(Double.valueOf(previousGPA.getText()));
-        repo.data.setPreviousCompletedHours(Integer.valueOf(previousCompletedHours.getText()));
+            repo.data.setPreviousGPA(Double.valueOf(previousGPA.getText()));
         
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Input for Previous GPA & Previous Completed Hours is Wrong\n"
-                     + "if any Text Field is Empty, Please Enter 0 !", "Error!!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Input for 'Previous GPA' is Wrong!\n"
+                    + ex.getMessage(), "Error!!", JOptionPane.ERROR_MESSAGE);
+            
+            previousGPA.setText("0");
+        }
         
-//            if(previousCompletedHours.getText().isEmpty())
-//                previousCompletedHours.setText("0");
-//        
-//            if(previousGPA.getText().isEmpty())
-//                previousGPA.setText("0");
+        try {
+            repo.data.setPreviousCompletedHours(Integer.valueOf(previousCompletedHours.getText()));
+        
+        } catch(Exception ex) {
+            JOptionPane.showMessageDialog(null, "Input for 'Previous Completed Hours' is Wrong!\n" 
+                    + ex.getMessage(), "Error!!", JOptionPane.ERROR_MESSAGE);
+
+            previousCompletedHours.setText("0");
         }
     }
     
@@ -763,13 +768,7 @@ public class GPA extends javax.swing.JFrame {
     
     private void calculateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculateMouseClicked
         setPreviousData();
-        
-        if(previousCompletedHours.getText().isEmpty())
-            previousCompletedHours.setText("0");
-        
-        if(previousGPA.getText().isEmpty())
-            previousGPA.setText("0");
-        
+                
         if (subject1.isSelected() == false && subject2.isSelected() == false && subject3.isSelected() == false 
                 && subject4.isSelected() == false && subject5.isSelected() == false && subject6.isSelected() == false
                 && !graduationProject.isSelected())
@@ -789,6 +788,7 @@ public class GPA extends javax.swing.JFrame {
                         repo.subject.setGPA1_hour3(Double.valueOf(subjectGPA1.getText()));
                         hours3 = hours3 + 3;
                     }
+                    
                     if(grade1.getSelectedItem().equals("F") && sub1_button1.isSelected())
                         fail2 = fail2 + 2;
 
@@ -826,6 +826,7 @@ public class GPA extends javax.swing.JFrame {
                         repo.subject.setGPA3_hour3(Double.valueOf(subjectGPA3.getText()));
                         hours3 = hours3 + 3;
                     }
+                    
                     if(grade3.getSelectedItem().equals("F") && sub3_button1.isSelected())
                         fail2 = fail2 + 2;
 
@@ -890,6 +891,7 @@ public class GPA extends javax.swing.JFrame {
                     else if(grade6.getSelectedItem().equals("F"))
                         fail3 = fail3 + 3;
                 }
+                
                 
                 if(graduationProject.isSelected() && !projectGrade.getSelectedItem().equals("Grade")) {
 
