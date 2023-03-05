@@ -1,4 +1,4 @@
 # GPA-Calculator
 GPA Calculator for FCAIH
 
-![Screenshot 7_24_2022 2_38_18 AM](https://user-images.githubusercontent.com/87280713/181123505-4297e44a-7f4b-4f5b-a0d9-1d004825e6a0.png)
+![Screenshot 3_5_2023 6_07_38 PM](https://user-images.githubusercontent.com/87280713/222971956-9bfdeab8-0e7f-486e-b119-7777ae2ad0e2.png)
