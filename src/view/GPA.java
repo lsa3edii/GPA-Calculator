@@ -13,7 +13,7 @@ public class GPA extends javax.swing.JFrame {
         setSelectionButton();
         setDisableButton();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -89,12 +89,13 @@ public class GPA extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(51, 153, 255));
 
-        exitApp.setBackground(new java.awt.Color(255, 255, 255));
+        exitApp.setBackground(new java.awt.Color(255, 255, 254));
         exitApp.setFont(new java.awt.Font("Century Schoolbook", 3, 27)); // NOI18N
-        exitApp.setForeground(new java.awt.Color(0, 153, 255));
+        exitApp.setForeground(new java.awt.Color(51, 153, 255));
         exitApp.setText("X");
+        exitApp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         exitApp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitAppMouseClicked(evt);
@@ -126,7 +127,7 @@ public class GPA extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel4.setBackground(new java.awt.Color(51, 153, 255));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -368,10 +369,11 @@ public class GPA extends javax.swing.JFrame {
         previousGPA.setForeground(new java.awt.Color(0, 153, 255));
         previousGPA.setText("0");
 
-        calculate.setBackground(new java.awt.Color(255, 255, 255));
+        calculate.setBackground(new java.awt.Color(255, 255, 254));
         calculate.setFont(new java.awt.Font("Century Schoolbook", 3, 25)); // NOI18N
-        calculate.setForeground(new java.awt.Color(0, 153, 255));
+        calculate.setForeground(new java.awt.Color(51, 153, 255));
         calculate.setText("Calculate");
+        calculate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         calculate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calculateMouseClicked(evt);
@@ -478,21 +480,18 @@ public class GPA extends javax.swing.JFrame {
                         .addGap(271, 271, 271))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(selectAll)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(selectAll)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(5, 5, 5)
-                                        .addComponent(text1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(subjectGPA1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(subject1)
                                     .addComponent(grade1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(sub1_button1)
-                                    .addComponent(sub1_button2))
-                                .addGap(18, 18, 18)
+                                    .addComponent(sub1_button2)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(text1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(subjectGPA1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(17, 17, 17)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -542,7 +541,7 @@ public class GPA extends javax.swing.JFrame {
                                             .addComponent(sub6_button2)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(text6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGap(6, 6, 6)
                                                 .addComponent(subjectGPA6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(126, 126, 126)
@@ -559,19 +558,17 @@ public class GPA extends javax.swing.JFrame {
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                                 .addComponent(graduationProject)
                                                 .addGap(12, 12, 12)
-                                                .addComponent(projectGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addContainerGap())
+                                                .addComponent(projectGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(calculate)
                         .addGap(464, 464, 464))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLable7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(hour, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4))
+                                .addComponent(hour, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(cumulativeGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(currentTermGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(336, 336, 336))))
@@ -627,9 +624,6 @@ public class GPA extends javax.swing.JFrame {
                     .addComponent(subject6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(text1)
-                        .addComponent(subjectGPA1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(grade2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -643,9 +637,13 @@ public class GPA extends javax.swing.JFrame {
                             .addComponent(sub2_button2)
                             .addComponent(sub1_button2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(text2)
-                            .addComponent(subjectGPA2)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(text1)
+                                .addComponent(subjectGPA1))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(text2)
+                                .addComponent(subjectGPA2))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(grade3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -749,7 +747,7 @@ public class GPA extends javax.swing.JFrame {
         grade4.disable(); sub4_button1.setEnabled(false); sub4_button2.setEnabled(false);
         grade5.disable(); sub5_button1.setEnabled(false); sub5_button2.setEnabled(false);
         grade6.disable(); sub6_button1.setEnabled(false); sub6_button2.setEnabled(false);
-        
+
         subjectGPA1.setEnabled(false); text1.setEnabled(false);
         subjectGPA2.setEnabled(false); text2.setEnabled(false);
         subjectGPA3.setEnabled(false); text3.setEnabled(false);
@@ -760,24 +758,72 @@ public class GPA extends javax.swing.JFrame {
         projectGrade.disable(); project_button.setEnabled(false);
         projectText.setEnabled(false); projectGPA.setEnabled(false);
     }
-
-    private void exitAppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitAppMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_exitAppMouseClicked
-
     
+    void removeData() {
+        hours2 = 0; hours3 = 0; fail2 = 0; fail3 = 0;
+        hoursProject = 0; failProject = 0;
+
+        repo.subject.setGPA1_hour2(0); repo.subject.setGPA2_hour2(0); repo.subject.setGPA3_hour2(0);
+        repo.subject.setGPA4_hour2(0); repo.subject.setGPA5_hour2(0); repo.subject.setGPA6_hour2(0);
+
+        repo.subject.setGPA1_hour3(0); repo.subject.setGPA2_hour3(0); repo.subject.setGPA3_hour3(0);
+        repo.subject.setGPA4_hour3(0); repo.subject.setGPA5_hour3(0); repo.subject.setGPA6_hour3(0);
+
+        repo.subject.setProjectGPA_hour6(0);
+    }
+    
+    private void projectGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projectGradeActionPerformed
+        repo.gradeType(projectGrade.getSelectedItem().toString());
+        projectGPA.setText("" + repo.subject.getSubjectGPA());
+    }//GEN-LAST:event_projectGradeActionPerformed
+
+    private void graduationProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_graduationProjectMouseClicked
+        if(graduationProject.isSelected()) {
+            projectGrade.setEnabled(true); project_button.setEnabled(true);
+            projectText.setEnabled(true); projectGPA.setEnabled(true); }
+        else {
+            projectGrade.setEnabled(false); project_button.setEnabled(false);
+            projectText.setEnabled(false); projectGPA.setEnabled(false); }
+    }//GEN-LAST:event_graduationProjectMouseClicked
+
+    private void grade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade1ActionPerformed
+        repo.gradeType(grade1.getSelectedItem().toString());
+        subjectGPA1.setText("" + repo.subject.getSubjectGPA());
+    }//GEN-LAST:event_grade1ActionPerformed
+
+    private void selectAllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selectAllMouseClicked
+        if(selectAll.isSelected()) {
+            subject1.setSelected(true); subject2.setSelected(true); subject3.setSelected(true);
+            subject4.setSelected(true); subject5.setSelected(true); subject6.setSelected(true);
+
+        } else {
+            subject1.setSelected(false); subject2.setSelected(false); subject3.setSelected(false);
+            subject4.setSelected(false); subject5.setSelected(false); subject6.setSelected(false);
+        }
+
+        this.subject1MouseClicked(evt);
+        this.subject2MouseClicked(evt);
+        this.subject3MouseClicked(evt);
+        this.subject4MouseClicked(evt);
+        this.subject5MouseClicked(evt);
+        this.subject6MouseClicked(evt);
+    }//GEN-LAST:event_selectAllMouseClicked
+
     private void calculateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculateMouseClicked
         setPreviousData();
-                
-        if (subject1.isSelected() == false && subject2.isSelected() == false && subject3.isSelected() == false 
+
+        if(Double.valueOf(previousGPA.getText()) > 4.0)
+                JOptionPane.showMessageDialog(null, "'Previous GPA → " + previousGPA.getText() + "' Must be Less than or Equal to 4");
+        
+        else if (subject1.isSelected() == false && subject2.isSelected() == false && subject3.isSelected() == false
                 && subject4.isSelected() == false && subject5.isSelected() == false && subject6.isSelected() == false
                 && !graduationProject.isSelected())
             JOptionPane.showMessageDialog(null, "Please Complete your Information!!");
-        
-        else { 
-            if(!previousGPA.getText().isEmpty() && !previousCompletedHours.getText().isEmpty() 
-                    && (!previousGPA.getText().isEmpty() || !previousCompletedHours.getText().isEmpty() )) {
-                
+
+        else {
+            if(!previousGPA.getText().isEmpty() && !previousCompletedHours.getText().isEmpty()
+                && (!previousGPA.getText().isEmpty() || !previousCompletedHours.getText().isEmpty() )) {
+
                 if(subject1.isSelected() && !grade1.getSelectedItem().equals("Grade")) {
 
                     if(sub1_button1.isSelected()) {
@@ -788,14 +834,13 @@ public class GPA extends javax.swing.JFrame {
                         repo.subject.setGPA1_hour3(Double.valueOf(subjectGPA1.getText()));
                         hours3 = hours3 + 3;
                     }
-                    
+
                     if(grade1.getSelectedItem().equals("F") && sub1_button1.isSelected())
                         fail2 = fail2 + 2;
 
                     else if(grade1.getSelectedItem().equals("F"))
                         fail3 = fail3 + 3;
                 }
-
 
                 if(subject2.isSelected() && !grade2.getSelectedItem().equals("Grade")) {
 
@@ -815,7 +860,6 @@ public class GPA extends javax.swing.JFrame {
                         fail3 = fail3 + 3;
                 }
 
-
                 if(subject3.isSelected() && !grade3.getSelectedItem().equals("Grade")) {
 
                     if(sub3_button1.isSelected()) {
@@ -826,14 +870,13 @@ public class GPA extends javax.swing.JFrame {
                         repo.subject.setGPA3_hour3(Double.valueOf(subjectGPA3.getText()));
                         hours3 = hours3 + 3;
                     }
-                    
+
                     if(grade3.getSelectedItem().equals("F") && sub3_button1.isSelected())
                         fail2 = fail2 + 2;
 
                     else if(grade3.getSelectedItem().equals("F"))
                         fail3 = fail3 + 3;
                 }
-
 
                 if(subject4.isSelected() && !grade4.getSelectedItem().equals("Grade")) {
 
@@ -853,7 +896,6 @@ public class GPA extends javax.swing.JFrame {
                         fail3 = fail3 + 3;
                 }
 
-
                 if(subject5.isSelected() && !grade5.getSelectedItem().equals("Grade")) {
 
                     if(sub5_button1.isSelected()) {
@@ -871,7 +913,6 @@ public class GPA extends javax.swing.JFrame {
                     else if(grade5.getSelectedItem().equals("F"))
                         fail3 = fail3 + 3;
                 }
-
 
                 if(subject6.isSelected() && !grade6.getSelectedItem().equals("Grade")) {
 
@@ -891,8 +932,7 @@ public class GPA extends javax.swing.JFrame {
                     else if(grade6.getSelectedItem().equals("F"))
                         fail3 = fail3 + 3;
                 }
-                
-                
+
                 if(graduationProject.isSelected() && !projectGrade.getSelectedItem().equals("Grade")) {
 
                     if(project_button.isSelected()) {
@@ -902,143 +942,100 @@ public class GPA extends javax.swing.JFrame {
 
                     if(projectGrade.getSelectedItem().equals("F"))
                         failProject = 6;
-                    
                 }
+                
             }
         }
-        
+
         repo.data.setTermHours(hours2 + hours3 + hoursProject);
         setCurrentData();
-        
-        hours2 = 0; hours3 = 0; fail2 = 0; fail3 = 0;
-        hoursProject = 0; failProject = 0;
-        
-        repo.subject.setGPA1_hour2(0); repo.subject.setGPA2_hour2(0); repo.subject.setGPA3_hour2(0);
-        repo.subject.setGPA4_hour2(0); repo.subject.setGPA5_hour2(0); repo.subject.setGPA6_hour2(0);
-        
-        repo.subject.setGPA1_hour3(0); repo.subject.setGPA2_hour3(0); repo.subject.setGPA3_hour3(0);
-        repo.subject.setGPA4_hour3(0); repo.subject.setGPA5_hour3(0); repo.subject.setGPA6_hour3(0);
-        
-        repo.subject.setProjectGPA_hour6(0);
+        removeData();
     }//GEN-LAST:event_calculateMouseClicked
 
-    
-    private void grade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade1ActionPerformed
-        repo.gradeType(grade1.getSelectedItem().toString());
-        subjectGPA1.setText("" + repo.subject.getSubjectGPA());
-    }//GEN-LAST:event_grade1ActionPerformed
+    private void subject6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject6MouseClicked
+        if(subject6.isSelected()) {
+            grade6.setEnabled(true); sub6_button1.setEnabled(true); sub6_button2.setEnabled(true);
+            subjectGPA6.setEnabled(true); text6.setEnabled(true); }
+        else {
+            grade6.setEnabled(false); sub6_button1.setEnabled(false); sub6_button2.setEnabled(false);
+            subjectGPA6.setEnabled(false); text6.setEnabled(false); }
+    }//GEN-LAST:event_subject6MouseClicked
 
-    private void grade2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade2ActionPerformed
-        repo.gradeType(grade2.getSelectedItem().toString());
-        subjectGPA2.setText("" + repo.subject.getSubjectGPA());
-    }//GEN-LAST:event_grade2ActionPerformed
+    private void subject5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject5MouseClicked
+        if(subject5.isSelected()) {
+            grade5.setEnabled(true); sub5_button1.setEnabled(true); sub5_button2.setEnabled(true);
+            subjectGPA5.setEnabled(true); text5.setEnabled(true); }
+        else {
+            grade5.setEnabled(false); sub5_button1.setEnabled(false); sub5_button2.setEnabled(false);
+            subjectGPA5.setEnabled(false); text5.setEnabled(false); }
+    }//GEN-LAST:event_subject5MouseClicked
 
-    private void grade3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade3ActionPerformed
-        repo.gradeType(grade3.getSelectedItem().toString());
-        subjectGPA3.setText("" + repo.subject.getSubjectGPA());
-    }//GEN-LAST:event_grade3ActionPerformed
+    private void subject4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject4MouseClicked
+        if(subject4.isSelected()) {
+            grade4.setEnabled(true); sub4_button1.setEnabled(true); sub4_button2.setEnabled(true);
+            subjectGPA4.setEnabled(true); text4.setEnabled(true); }
+        else {
+            grade4.setEnabled(false); sub4_button1.setEnabled(false); sub4_button2.setEnabled(false);
+            subjectGPA4.setEnabled(false); text4.setEnabled(false); }
+    }//GEN-LAST:event_subject4MouseClicked
 
-    private void grade4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade4ActionPerformed
-        repo.gradeType(grade4.getSelectedItem().toString());
-        subjectGPA4.setText("" + repo.subject.getSubjectGPA());
-    }//GEN-LAST:event_grade4ActionPerformed
+    private void subject3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject3MouseClicked
+        if(subject3.isSelected()) {
+            grade3.setEnabled(true); sub3_button1.setEnabled(true); sub3_button2.setEnabled(true);
+            subjectGPA3.setEnabled(true); text3.setEnabled(true); }
+        else {
+            grade3.setEnabled(false); sub3_button1.setEnabled(false); sub3_button2.setEnabled(false);
+            subjectGPA3.setEnabled(false); text3.setEnabled(false); }
+    }//GEN-LAST:event_subject3MouseClicked
 
-    private void grade5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade5ActionPerformed
-        repo.gradeType(grade5.getSelectedItem().toString());
-        subjectGPA5.setText("" + repo.subject.getSubjectGPA());
-    }//GEN-LAST:event_grade5ActionPerformed
+    private void subject2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject2MouseClicked
+        if(subject2.isSelected()) {
+            grade2.setEnabled(true); sub2_button1.setEnabled(true); sub2_button2.setEnabled(true);
+            subjectGPA2.setEnabled(true); text2.setEnabled(true); }
+        else {
+            grade2.setEnabled(false); sub2_button1.setEnabled(false); sub2_button2.setEnabled(false);
+            subjectGPA2.setEnabled(false); text2.setEnabled(false); }
+    }//GEN-LAST:event_subject2MouseClicked
+
+    private void subject1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject1MouseClicked
+        if(subject1.isSelected()) {
+            grade1.setEnabled(true); sub1_button1.setEnabled(true); sub1_button2.setEnabled(true);
+            subjectGPA1.setEnabled(true); text1.setEnabled(true); }
+        else {
+            grade1.setEnabled(false); sub1_button1.setEnabled(false); sub1_button2.setEnabled(false);
+            subjectGPA1.setEnabled(false); text1.setEnabled(false); }
+    }//GEN-LAST:event_subject1MouseClicked
 
     private void grade6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade6ActionPerformed
         repo.gradeType(grade6.getSelectedItem().toString());
         subjectGPA6.setText("" + repo.subject.getSubjectGPA());
     }//GEN-LAST:event_grade6ActionPerformed
 
-    private void selectAllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selectAllMouseClicked
-        if(selectAll.isSelected()) {
-            subject1.setSelected(true); subject2.setSelected(true); subject3.setSelected(true);
-            subject4.setSelected(true); subject5.setSelected(true); subject6.setSelected(true);
-            
-        } else {
-            subject1.setSelected(false); subject2.setSelected(false); subject3.setSelected(false);
-            subject4.setSelected(false); subject5.setSelected(false); subject6.setSelected(false);
-        }
-        
-        this.subject1MouseClicked(evt);
-        this.subject2MouseClicked(evt);
-        this.subject3MouseClicked(evt);
-        this.subject4MouseClicked(evt);
-        this.subject5MouseClicked(evt);
-        this.subject6MouseClicked(evt);
-    }//GEN-LAST:event_selectAllMouseClicked
+    private void grade5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade5ActionPerformed
+        repo.gradeType(grade5.getSelectedItem().toString());
+        subjectGPA5.setText("" + repo.subject.getSubjectGPA());
+    }//GEN-LAST:event_grade5ActionPerformed
 
-    private void subject1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject1MouseClicked
-        if(subject1.isSelected()) {
-            grade1.setEnabled(true); sub1_button1.setEnabled(true); sub1_button2.setEnabled(true); 
-            subjectGPA1.setEnabled(true); text1.setEnabled(true); }
-        else {
-            grade1.setEnabled(false); sub1_button1.setEnabled(false); sub1_button2.setEnabled(false); 
-            subjectGPA1.setEnabled(false); text1.setEnabled(false); }
-    }//GEN-LAST:event_subject1MouseClicked
+    private void grade4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade4ActionPerformed
+        repo.gradeType(grade4.getSelectedItem().toString());
+        subjectGPA4.setText("" + repo.subject.getSubjectGPA());
+    }//GEN-LAST:event_grade4ActionPerformed
 
-    private void subject2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject2MouseClicked
-        if(subject2.isSelected()) {
-            grade2.setEnabled(true); sub2_button1.setEnabled(true); sub2_button2.setEnabled(true); 
-            subjectGPA2.setEnabled(true); text2.setEnabled(true); }
-        else {
-            grade2.setEnabled(false); sub2_button1.setEnabled(false); sub2_button2.setEnabled(false); 
-            subjectGPA2.setEnabled(false); text2.setEnabled(false); }
-    }//GEN-LAST:event_subject2MouseClicked
+    private void grade3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade3ActionPerformed
+        repo.gradeType(grade3.getSelectedItem().toString());
+        subjectGPA3.setText("" + repo.subject.getSubjectGPA());
+    }//GEN-LAST:event_grade3ActionPerformed
 
-    private void subject3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject3MouseClicked
-        if(subject3.isSelected()) {
-            grade3.setEnabled(true); sub3_button1.setEnabled(true); sub3_button2.setEnabled(true); 
-            subjectGPA3.setEnabled(true); text3.setEnabled(true); }
-        else {
-            grade3.setEnabled(false); sub3_button1.setEnabled(false); sub3_button2.setEnabled(false); 
-            subjectGPA3.setEnabled(false); text3.setEnabled(false); }
-    }//GEN-LAST:event_subject3MouseClicked
+    private void grade2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade2ActionPerformed
+        repo.gradeType(grade2.getSelectedItem().toString());
+        subjectGPA2.setText("" + repo.subject.getSubjectGPA());
+    }//GEN-LAST:event_grade2ActionPerformed
 
-    private void subject4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject4MouseClicked
-        if(subject4.isSelected()) {
-            grade4.setEnabled(true); sub4_button1.setEnabled(true); sub4_button2.setEnabled(true); 
-            subjectGPA4.setEnabled(true); text4.setEnabled(true); }
-        else {
-            grade4.setEnabled(false); sub4_button1.setEnabled(false); sub4_button2.setEnabled(false); 
-            subjectGPA4.setEnabled(false); text4.setEnabled(false); }
-    }//GEN-LAST:event_subject4MouseClicked
+    private void exitAppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitAppMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitAppMouseClicked
 
-    private void subject5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject5MouseClicked
-        if(subject5.isSelected()) {
-            grade5.setEnabled(true); sub5_button1.setEnabled(true); sub5_button2.setEnabled(true); 
-            subjectGPA5.setEnabled(true); text5.setEnabled(true); }
-        else {
-            grade5.setEnabled(false); sub5_button1.setEnabled(false); sub5_button2.setEnabled(false); 
-            subjectGPA5.setEnabled(false); text5.setEnabled(false); }
-    }//GEN-LAST:event_subject5MouseClicked
-
-    private void subject6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subject6MouseClicked
-        if(subject6.isSelected()) {
-            grade6.setEnabled(true); sub6_button1.setEnabled(true); sub6_button2.setEnabled(true); 
-            subjectGPA6.setEnabled(true); text6.setEnabled(true); }
-        else {
-            grade6.setEnabled(false); sub6_button1.setEnabled(false); sub6_button2.setEnabled(false); 
-            subjectGPA6.setEnabled(false); text6.setEnabled(false); }
-    }//GEN-LAST:event_subject6MouseClicked
-
-    private void graduationProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_graduationProjectMouseClicked
-        if(graduationProject.isSelected()) {
-            projectGrade.setEnabled(true); project_button.setEnabled(true);
-            projectText.setEnabled(true); projectGPA.setEnabled(true); }
-        else {
-            projectGrade.setEnabled(false); project_button.setEnabled(false);
-            projectText.setEnabled(false); projectGPA.setEnabled(false); }
-    }//GEN-LAST:event_graduationProjectMouseClicked
-
-    private void projectGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projectGradeActionPerformed
-        repo.gradeType(projectGrade.getSelectedItem().toString());
-        projectGPA.setText("" + repo.subject.getSubjectGPA());
-    }//GEN-LAST:event_projectGradeActionPerformed
-
+    
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

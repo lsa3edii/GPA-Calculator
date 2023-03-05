@@ -7,7 +7,7 @@ public class Data {
     private int termHours;
 
     public Data() {
-        
+        //
     }
     
     public double getPreviousGPA() {
